@@ -74,9 +74,9 @@
 //#define CONTROL_FEED_HOLD_PIN   GPIO_NUM_36  // needs external pullup
 //#define CONTROL_CYCLE_START_PIN GPIO_NUM_39  // needs external pullup
 
-#define MACRO_BUTTON_0_PIN      GPIO_NUM_36
-#define MACRO_BUTTON_1_PIN      GPIO_NUM_39
-#define MACRO_BUTTON_2_PIN      GPIO_NUM_34
+#define MACRO_BUTTON_0_PIN      GPIO_NUM_36 // Hold/resume. See 4axis_xyza.cpp
+#define MACRO_BUTTON_1_PIN      GPIO_NUM_39 // Homing. See 4axis_xyza.cpp
+#define MACRO_BUTTON_2_PIN      GPIO_NUM_34 // Macro for SD card Z probe
 
 /* Normally Grbl_ESP32 ignores tool changes.
  * It just tracks the current tool number.

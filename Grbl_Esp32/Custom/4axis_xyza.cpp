@@ -29,7 +29,7 @@ uint32_t earlier = 0;
   options.  user_defined_macro() is called with the button number to
   perform whatever actions you choose.
 */
-#if defined(MACRO_BUTTON_0_PIN) || defined(MACRO_BUTTON_1_PIN) || defined(MACRO_BUTTON_2_PIN)
+#if defined(MACRO_BUTTON_0_PIN) || defined(MACRO_BUTTON_1_PIN) /* || defined(MACRO_BUTTON_2_PIN) */
 void user_defined_macro(uint8_t index) {
     uint32_t later, msPassedBy = 0;
 
@@ -87,8 +87,8 @@ void user_defined_macro(uint8_t index) {
                     WebUI::inputBuffer.push("G38.2 Z-25.0 F50\r\n");
 
                     // Plate thickness 20mm, so adjust Z G54 WCS height. NO X/Y WCS changes!!!
-                    grbl_sendf(CLIENT_ALL, "G10 L20 P0 Z+20\r\n");
-                    WebUI::inputBuffer.push("G10 L20 P0 Z+20\r\n");  // Set G54, only Z axis, on workpiece level, 20mm below alu plate
+                    grbl_sendf(CLIENT_ALL, "G10 L20 P0 Z+20.1\r\n");
+                    WebUI::inputBuffer.push("G10 L20 P0 Z+20.1\r\n");  // Set G54, only Z axis, on workpiece level, 20mm below alu plate
 
 					//Move up
                     grbl_sendf(CLIENT_ALL, "G53 G0 Z-5 F200\r\n");
