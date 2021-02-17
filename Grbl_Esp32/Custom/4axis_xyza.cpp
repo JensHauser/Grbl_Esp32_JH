@@ -29,7 +29,7 @@ uint32_t earlier = 0;
   options.  user_defined_macro() is called with the button number to
   perform whatever actions you choose.
 */
-#if defined(MACRO_BUTTON_0_PIN) || defined(MACRO_BUTTON_1_PIN) /* || defined(MACRO_BUTTON_2_PIN) */
+#if defined(MACRO_BUTTON_0_PIN) || defined(MACRO_BUTTON_1_PIN) || defined(MACRO_BUTTON_2_PIN)
 void user_defined_macro(uint8_t index) {
     uint32_t later, msPassedBy = 0;
 
